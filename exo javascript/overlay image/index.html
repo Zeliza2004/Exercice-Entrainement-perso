@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overlay image</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:ital@1&display=swap"
+        rel="stylesheet">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: grey;
+            font-family: 'lobster', cursive;
+            color: #fefefe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+        h2 {
+            cursor: pointer;
+            z-index: 2;
+        }
+        .wrapper--img {
+            position: absolute;
+            height: 40vh;
+            width: 60vw;
+            left: 20vw;
+            top: 30vh;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+        img {
+            height: 40vh;
+            width: 60vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Hover me</h2>
+    <div class="wrapper--img">
+        <img src="img_2140.jpg" alt="image-nuage-de-couleur">
+    </div>
+    <script>
+        var target = document.querySelector('.wrapper--img');
+
+            //0: on repasse la widht a 0
+        target.style.width = '0vw';
+
+            //1 au hover de la souris l'animation se déclenche
+        document.querySelector('h2').addEventListener('mouseenter', function() {
+            target.style.width = '60vw';
+        })
+
+        //2 au leave de la souris, l'animation se déclanche
+        document.querySelector('h2').addEventListener('mouseleave', function() {
+            target.style.width = '0vw';
+        })
+    </script>
+</body>
+</html>
